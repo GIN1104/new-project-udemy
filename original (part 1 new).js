@@ -23,4 +23,13 @@
 
 'use strict';
 
-document.write('<h1>hello</h1>');
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');  
+
+const personalMovieDB = {
+    count : numberOfFilms,
+    movies : {},
+    actors : {},
+    genres : [],
+    privat : false
+};
+console.log(personalMovieDB );     
