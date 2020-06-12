@@ -41,12 +41,16 @@
 // Код возьмите из предыдущего домашнего задания
 
 'use strict';
+let numberOfFilms;
 
+function start(){
 var numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
 
- 
-
-
+         while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+      numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+}
+}
+start();
 var personalMovieDB = {
     count : numberOfFilms,
     movies :  {},
@@ -54,7 +58,7 @@ var personalMovieDB = {
     genres : [],
     privat : false
 };
-   
+
 
 for(var i = 0; i < 2; i++){
     var lastFilm = prompt('Один из последних просмотренных фильмов?', ''),
@@ -65,8 +69,10 @@ for(var i = 0; i < 2; i++){
     } else{
         console.log('error');
         i--;
-    }  
-}
+    } 
+
+    }
+
 if(personalMovieDB.count < 10) {
    console.log("Просмотрено довольно мало фильмов"); 
 }else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
