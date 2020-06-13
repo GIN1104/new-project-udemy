@@ -45,12 +45,12 @@ let numberOfFilms;
 
 function start(){
 var numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
-
          while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
       numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 }
 }
 start();
+
 var personalMovieDB = {
     count : numberOfFilms,
     movies :  {},
@@ -59,7 +59,7 @@ var personalMovieDB = {
     privat : false
 };
 
-
+function films(){
 for(var i = 0; i < 2; i++){
     var lastFilm = prompt('Один из последних просмотренных фильмов?', ''),
         filmsRaiting = prompt('На сколько оцените его?', ''); 
@@ -70,9 +70,10 @@ for(var i = 0; i < 2; i++){
         console.log('error');
         i--;
     } 
-
     }
-
+    
+}
+films();
 if(personalMovieDB.count < 10) {
    console.log("Просмотрено довольно мало фильмов"); 
 }else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
@@ -82,5 +83,4 @@ if(personalMovieDB.count < 10) {
 }else{
    console.log("Произошла ошибка");
 }
-
 console.log(personalMovieDB);
