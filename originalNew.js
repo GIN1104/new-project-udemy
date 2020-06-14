@@ -74,6 +74,8 @@ for(var i = 0; i < 2; i++){
     
 }
 films();
+
+function detectPersonalLevel() {
 if(personalMovieDB.count < 10) {
    console.log("Просмотрено довольно мало фильмов"); 
 }else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
@@ -83,4 +85,7 @@ if(personalMovieDB.count < 10) {
 }else{
    console.log("Произошла ошибка");
 }
+}
+
+detectPersonalLevel();
 console.log(personalMovieDB);
