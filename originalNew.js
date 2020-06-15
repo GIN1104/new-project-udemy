@@ -84,4 +84,12 @@ if(personalMovieDB.count < 10) {
 }
 }
 detectPersonalLevel();
+function showMyDB (hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB(personalMovieDB.privat);
+
 console.log(personalMovieDB);
