@@ -37,9 +37,7 @@
 4) Потренироваться и переписать цикл еще двумя способами*/
 
 
-
 // Код возьмите из предыдущего домашнего задания
-
 'use strict';
 let numberOfFilms;
 
@@ -71,7 +69,6 @@ for(var i = 0; i < 2; i++){
         i--;
     } 
     }
-    
 }
 films();
 
@@ -86,6 +83,5 @@ if(personalMovieDB.count < 10) {
    console.log("Произошла ошибка");
 }
 }
-
 detectPersonalLevel();
 console.log(personalMovieDB);
