@@ -167,3 +167,5 @@ for (let value of arr){
     console.log(value);
 }
 
+arr[99] = 0;
+
