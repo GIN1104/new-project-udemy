@@ -152,7 +152,21 @@ const {border,bg} = options.colors;
 
 
 
-const arr = [2, 3, 6, 8, 10];
+const arr = [2, 13, 26, 8, 10];
+
+arr.sort(compareNum);
+console.log(arr);
+
+function compareNum(a, b){
+    return a - b;
+}
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
+
+arr.forEach(function(item, i, arr){
+   console.log(`${i}: ${item} inside of array ${arr}`);
+});
 
 // arr.pop();
 // arr.push(12);
@@ -167,5 +181,80 @@ for (let value of arr){
     console.log(value);
 }
 
-arr[99] = 0;
+//  const str = prompt("", "");
+//  const products = str.split(", ");
+//  products.sort();
+//  console.log(products.join(", "));
 
+
+// Objects
+
+const obj = {
+    a: 5,
+    b: 1
+};
+
+// const copy = obj; //Ssilku
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+let copy = (mainObj) =>{
+let objCopy = {};
+
+let key;
+for(key in mainObj){
+    objCopy[key] = mainObj[key];
+}
+return objCopy;
+};
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+
+console.log(newNumbers);
+console.log(numbers);
+
+
+
+// __Proto__
+
+
+// let str = "some";
+// let strObj = new String(str);
+
+// console.log(typeof(str));
+// console.log(typeof(strObj));
+
+console.dir([1, 2, 3].reverse());
+
+
+const soldier = {
+    health: 400,
+    armor: 100,
+    sayHello: function() {
+        console.log("Hello");
+    }
+};
+
+const jonh = Object.create(soldier);
+
+// const jonh = {
+//     health: 100
+// };
+// jonh.__proto__ = soldier;
+// Object.setPrototypeOf(jonh, soldier);
+// console.log(jonh.armor);
+jonh.sayHello();
