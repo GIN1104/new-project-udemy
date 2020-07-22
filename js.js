@@ -258,3 +258,151 @@ const jonh = Object.create(soldier);
 // Object.setPrototypeOf(jonh, soldier);
 // console.log(jonh.armor);
 jonh.sayHello();
+
+
+
+let a = 0;
+console.log(a);
+
+let obj1 = {
+        number: 5,
+        sayNumber: function() {
+            let say = () => {
+                console.log(this)
+            }
+            say();
+        }
+
+}
+obj1.sayNumber();
+
+let names = ['Ivan', 'Ann', 'Yosi', 'Voldemar'];
+
+let shortNames = names.filter((name) => {
+    return name.length < 5;
+});
+
+console.log(shortNames);
+
+let answers = ['IvAn', 'AnnA', 'HeLLo'];
+
+answers = answers.map((item) => item.toLowerCase());
+
+console.log(answers);
+
+let nameB = 'I';
+let age = 20;
+
+console.log(`Polzovatel ${nameB}, ${age} let`);
+
+function fetchData(data , count = 0)  {
+    // count = count || 0;
+    console.log(`Данные: ${data}  в колличестве ${count}`)
+};
+fetchData('something');
+
+ let max = (a, b,...numbers) =>{
+     console.log(numbers);
+}
+max(3, 4, 67, 97);
+
+const arr1 = [ 1, 2, 5],
+      arr2 = [ 43, 2, 6];
+
+const res =  Math.max(97, ...arr1, 3,  ...arr2);
+
+console.log(res);
+
+
+
+
+const avatar = 'Photo';
+const user = {
+     name: 'default',
+     pass: 'qwerty',
+     rigths: 'user'
+};
+
+const admin ={
+    name: 'admin',
+    pass: 'root'
+}
+// const res1 = Object.assign({}, user, admin);
+const res1 = { ...user, ...admin, avatar};
+console.log(res1);
+
+
+const x = 25, y = 10;
+
+// const coords = {
+//     x: x,
+//     y: y,
+//     calcSq: function(){
+//         console.log(this.x*this.y)
+//     }
+
+// }
+ 
+const coords = { x, y,
+    calcSq(){
+        console.log(this.x*this.y);
+    }
+
+}
+coords.calcSq();
+console.log(coords);
+
+
+
+const user1 = {
+    name: 'default',
+    pass: 'qwerty',
+    rigths: {
+        first: 'user',
+        second: 'user2'
+    }
+};
+
+const userName = user1.name;
+console.log(userName);
+
+const {name, pass, rigths:{first,second}} = user1;
+console.log(name, pass, first, second);
+
+function connect({
+    host = 'loccalhost',
+    port = 3000,
+    user = 'default'
+} = {})
+{
+console.log(`host: ${host}, port: ${port}, user: ${user}`);
+}
+// connect();
+connect({
+    port: 2500,
+    host: 'sflf'
+});
+
+// const numbersNew =[ 3, 5, 6, 6];
+// // const [z, b, c] = numbersNew;
+// // console.log(z, b, c);
+// const [, b, c] = numbersNew;
+// console.log(c);
+
+const numbersNew =[ [3, 5] , [6, 6]];
+
+const [[z, b], [ c, d]] = numbersNew;
+console.log(z);
+
+const country = {
+       name: 'England',
+       population: 20000000,
+       gender: {
+           male: ['15%', '40%'],
+           female: [ '16%', '29%']
+       }
+};
+
+const {gender: {male:[maleUnder18, maleAdult], female:[femaleUnder18, femaleAdult]}} = country;
+
+console.log(maleUnder18, femaleAdult)
